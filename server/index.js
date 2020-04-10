@@ -1,12 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
-// const ctrl = require('./controllers/controller');
-// {getHouses, addHouse, removeHouse}
+const {getHouses, addHouse, deleteHouse} = require('./controller');
+
 
 const app = express();
 
-const {CONNECTION_STRING, SERVER_PORT} = process.env;
+const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
 massive(CONNECTION_STRING)
     .then(dbInstance => {
@@ -17,11 +17,13 @@ massive(CONNECTION_STRING)
         console.log(error)
 })
 
-// app.use(express.json());
+app.use(express.json());
 
-// app.get('/api/houses', getHouses);
-// app.post('/api/houses', addHouse);
+app.get('/api/houses', getHouses);
+app.post('/api/houses', addHouse);
 
-// app.delete('/api/houses/:id', removeHouse);
+app.delete('/api/houses/:id', deleteHouse);
 
-app.listen(5000, () => console.log(`Running on PORT 5000`));
+app.listen(SERVER_PORT, () => {
+    console.log(`Server is listening on port ${SERVER_PORT}.`);
+})
