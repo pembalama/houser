@@ -6,9 +6,8 @@ import axios from "axios";
 export default class Dashboard extends React.Component {
     constructor() {
         super();
-        // const reduxState = store.getState()
+        
         this.state = {
-            // listing: reduxState.listing
             listing: []
         }
     }
@@ -16,26 +15,7 @@ export default class Dashboard extends React.Component {
 
     componentDidMount() {
         this.getListing();
-        // store.subscribe(() => {
-        //     const reduxState = store.getState();
-        //     this.setState({ listing: reduxState.listing })
-        // })
     }
-
-    // getListing = () => {
-    //     axios.get('/api/houses')
-    //         .then(response => {
-    //             console.log(response.data);
-    //             this.setState({
-    //                 houseList: res.data
-    //               });
-            
-    //             });
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         })
-    // }
 
 
     getListing = () => {
