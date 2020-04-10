@@ -5,7 +5,7 @@
             res.status(200).json(houses)
         }).catch(error => {
             console.log(error)
-            res.status(500).json("Database having issues.")
+            res.status(500).json("please try again.")
         })
     }
     
@@ -16,7 +16,7 @@
             res.sendStatus(200)
         }).catch(error => {
             console.log(error)
-            res.status(500).json("Database having issues.");
+            res.status(500).json("there was an issue adding data.");
         })
     }
     
@@ -27,7 +27,7 @@
             res.status(200).json(house)
         }).catch(error => {
             console.log(error)
-            res.status(500).json("Database having issues.");
+            res.status(500).json("sorry, try again!.");
         })
     }
 

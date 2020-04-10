@@ -1,4 +1,3 @@
-
 ALTER TABLE houses 
 ADD COLUMN mortgage INTEGER;
 ALTER TABLE houses 

@@ -5,6 +5,8 @@ export default class House extends React.Component {
         return(
             <div>
                 <h1>House</h1>
+                <button 
+                    onClick = {(id) => this.props.deleteHouse(this.props.id)}>Delete</button>
             </div>
         )
     }

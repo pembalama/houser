@@ -75,7 +75,10 @@ export default class Wizard extends React.Component {
                         </form>
                     </div>
                 </form>
-
+                
+                    <button 
+                    className='addButton' 
+                    onClick={this.addHouse}>Complete</button>
 
             </div>
         )
